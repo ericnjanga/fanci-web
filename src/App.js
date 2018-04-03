@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 //Components ...
 import TemplateAuth from './components/TemplateAuth.js';
+import TemplateMain from './components/TemplateMain.js';
+
 import Login from './components/Login.js';
 import Register from './components/Register.js';
 import Aroundus from './components/Aroundus.js';
