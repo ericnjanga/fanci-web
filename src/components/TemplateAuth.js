@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const AuthPage = (props) => {
+const TemplateAuth = (props) => {
 	return(
 		<section className="auth-page"> 
 		    <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header"> 
@@ -22,4 +22,4 @@ const AuthPage = (props) => {
 	);
 }
 
-export default AuthPage;
+export default TemplateAuth;

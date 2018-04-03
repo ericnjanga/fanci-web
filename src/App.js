@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 //Components ...
-import AuthPage from './components/AuthPage.js';
+import TemplateAuth from './components/TemplateAuth.js';
 import Login from './components/Login.js';
 import Register from './components/Register.js';
 import Aroundus from './components/Aroundus.js';
@@ -23,18 +23,12 @@ class App extends Component {
               )} />
               
               <Route path="/auth" render={()=>(
-                <AuthPage>
+                <TemplateAuth>
                   <Route path="/auth/login" component={Login} />
                   <Route path="/auth/register" component={Register} />
-                </AuthPage>
+                </TemplateAuth>
               )} />
 
-              {/*
-              <AuthPage>
-                  <Route path="/auth/login" component={Login} />
-                  <Route path="/auth/register" component={Register} />
-                </AuthPage>
-              */}
               
               <Route path="/around-us" component={Aroundus} /> 
               <Route path="/profile" component={Profile} /> 
