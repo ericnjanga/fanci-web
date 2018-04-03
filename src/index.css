@@ -11,8 +11,9 @@ main {
 	border: 1px solid red;
 }
 aside {
-	border: 1px solid lime;
+	background: lime;
 }
 .center {
-	border: 1px solid gray;
+	background: gray;
+	flex: 0.2;
 }

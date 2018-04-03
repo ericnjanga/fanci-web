@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import logo from './logo.svg';
+//Components ...
+import Login from './components/Login.js';
+import Register from './components/Register.js';
+import Aroundus from './components/Aroundus.js';
+import Profile from './components/Profile.js';
+import Privacy from './components/Privacy.js';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
+        <div className="App"> 
           <main>
             <Sidebar />
             <div className="center">
@@ -73,45 +75,5 @@ const Sidebar = () => {
   ); 
 }
 
-
-const Login = () => {
-  return(
-    <div className="linkContent">
-      <h2>Login</h2>
-    </div>
-  );
-}
-
-const Register = () => {
-  return(
-    <div className="linkContent">
-      <h2>Register</h2>
-    </div>
-  );
-}
-
-const Aroundus = () => {
-  return(
-    <div className="linkContent">
-      <h2>Around us</h2>
-    </div>
-  );
-}
-
-const Profile = () => {
-  return(
-    <div className="linkContent">
-      <h2>Profile</h2>
-    </div>
-  );
-}
-
-const Privacy = () => {
-  return(
-    <div className="linkContent">
-      <h2>Privacy</h2>
-    </div>
-  );
-}
 
 export default App;
