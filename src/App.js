@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App"> 
+            <TestingLinks />
           <main>
-            <Sidebar />
             <div className="center">
               <Route exact={true} path="/" render={()=>(
                 <h1>Welcome</h1>
@@ -35,10 +35,10 @@ class App extends Component {
 }
 
 
-const Sidebar = () => {
+const TestingLinks = () => {
 
   return(
-    <aside>
+    <nav className="test-links">
       <ul>
         <li>
           <Link to={`/`}>
@@ -71,7 +71,7 @@ const Sidebar = () => {
           </Link>
         </li>
       </ul>
-    </aside>
+    </nav>
   ); 
 }
 

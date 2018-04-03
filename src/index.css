@@ -10,8 +10,15 @@ main {
 	height: 400px;
 	border: 1px solid red;
 }
-aside {
+.test-links {
 	background: lime;
+}
+.test-links ul {
+	list-style: none;
+}
+.test-links ul li {
+	display: inline-block;
+	margin-right: 10px;
 }
 .center {
 	background: gray;
