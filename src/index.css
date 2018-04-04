@@ -8,10 +8,18 @@ body {
 main {
 	display: flex;
 	height: 400px;
-	border: 1px solid red;
+    align-items: center;
+    justify-content: center;
+}
+.template-auth {
+	background: chocolate;
+}
+.template-main {
+	background: turquoise;
 }
 .test-links {
 	background: lime;
+	    padding: 10px;
 }
 .test-links ul {
 	list-style: none;
@@ -19,8 +27,4 @@ main {
 .test-links ul li {
 	display: inline-block;
 	margin-right: 10px;
-}
-.center {
-	background: gray;
-	flex: 0.2;
-}
+} 

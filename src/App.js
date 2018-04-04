@@ -18,13 +18,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App"> 
-          <TestingLinks />
-          <main> 
-            {/* Will force a redirection to '/home' */}
-            <Route exact={true} path="/" component={PageComponent} />
-            {/* Will render the appropriate component or '/home' */}
-            <Route path="/:id" component={PageComponent} />
-          </main>
+          <TestingLinks /> 
+          {/* Will force a redirection to '/home' */}
+          <Route exact={true} path="/" component={PageComponent} />
+          {/* Will render the appropriate component or '/home' */}
+          <Route path="/:id" component={PageComponent} /> 
         </div> 
       </Router>   
     );
@@ -78,11 +76,6 @@ const TestingLinks = () => {
     <nav className="test-links">
       <ul>
         <li>
-          <Link to={`/`}>
-            Home
-          </Link>
-        </li> 
-        <li>
           <Link to={`/login`}>
             Login
           </Link>
@@ -92,6 +85,11 @@ const TestingLinks = () => {
             Register
           </Link>
         </li>
+        <li>
+          <Link to={`/`}>
+            Home
+          </Link>
+        </li> 
         <li>
           <Link to={`/around-us`}>
             Around Us

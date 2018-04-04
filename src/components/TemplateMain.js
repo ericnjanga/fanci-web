@@ -2,10 +2,10 @@ import React from 'react';
 
 const TemplateMain = (props) => {
 	return (
-		<section>
+		<main className="template-main"> 
 			<h1> template main </h1>
-			{props.children}
-		</section>
+			<p>{props.children}</p>
+		</main>
 	)
 }
 

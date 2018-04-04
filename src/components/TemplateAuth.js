@@ -3,7 +3,7 @@ import React from 'react';
 
 const TemplateAuth = (props) => {
 	return(
-		<section className="auth-page"> 
+		<main className="template-auth"> 
 		    <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header"> 
 		      <main className="mdl-layout__content"> 
 		        <section className="mdl-card mdl-card--auth">
@@ -18,7 +18,7 @@ const TemplateAuth = (props) => {
 		        </section> 
 		      </main>
 		    </div>
-		</section>
+		</main>
 	);
 }
 
