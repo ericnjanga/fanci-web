@@ -26,3 +26,31 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+button[disabled]{
+  background-color: #ccc;
+}
+
+.error {
+  margin-top: 0;
+  background-color: red;
+}
+
+
+
+/** --- delete this after --- **/
+.add-item input,
+.add-item select,
+.add-item button,
+.add-item textarea {
+  display: block;
+  border: 1px solid #999;
+      width: 100%;
+  margin-bottom: 10px;
+}
+/** --- delete this after --- **/

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+
 import logo from './logo.svg';
 import './App.css';
+
+import CrudForm from './CrudForm.js';
 
 class App extends Component {
   render() {
@@ -13,6 +16,8 @@ class App extends Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
           <main>
+            <CrudForm />
+            {/*
             <Sidebar />
             <div className="center">
               <Route exact={true} path="/" render={()=>(
@@ -25,6 +30,7 @@ class App extends Component {
               <Route path="/profile" component={Profile} /> 
               <Route path="/privacy" component={Privacy} /> 
             </div>
+          */}
           </main>
         </div>
       </Router>
