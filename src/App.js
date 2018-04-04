@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 //Components ...
 import TemplateAuth from './components/TemplateAuth.js';
 import TemplateMain from './components/TemplateMain.js';
 
+import Map from './components/Map.js';
 import Login from './components/Login.js';
 import Register from './components/Register.js';
 import Aroundus from './components/Aroundus.js';
@@ -17,35 +18,62 @@ class App extends Component {
     return (
       <Router>
         <div className="App"> 
-            <TestingLinks />
-          <main>
-            
-              <Route exact={true} path="/" render={()=>(
-                <h1>Welcome</h1>
-              )} />
-              
-              <Route path="/auth" render={()=>(
-                <TemplateAuth>
-                  <Route path="/auth/login" component={Login} />
-                  <Route path="/auth/register" component={Register} />
-                </TemplateAuth>
-              )} />
-
-              
-              <Route path="/around-us" component={Aroundus} /> 
-              <Route path="/profile" component={Profile} /> 
-              <Route path="/privacy" component={Privacy} /> 
-             
+          <TestingLinks />
+          <main> 
+            {/* Will force a redirection to '/home' */}
+            <Route exact={true} path="/" component={PageComponent} />
+            {/* Will render the appropriate component or '/home' */}
+            <Route path="/:id" component={PageComponent} />
           </main>
-        </div>
-      </Router>
+        </div> 
+      </Router>   
     );
   }
 }
 
 
-const TestingLinks = () => {
 
+/**
+ * Renders the appropriate page component and its wrapper based on the params id
+ * "login" and "register" have a similar look (same wrapper)
+ * The other pages have a similar look (same wrapper)
+ * Any unmatching param is redirected to "home" page
+*/
+const PageComponent = ({ match }) => {
+  //Redirect to home page if there is no match
+  if(!/\bhome\b|\blogin\b|\bregister\b|\baround-us\b|\bprofile\b|\bprivacy\b/.test(match.params.id)){
+    return <Redirect to="/home" />;
+  }
+ 
+  const wrappers = {
+    auth : TemplateAuth,
+    main : TemplateMain
+  };
+  const components = {
+    home: Map,
+    login: Login,
+    register: Register,
+    'around-us': Aroundus,
+    profile: Profile,
+    privacy: Privacy, 
+  };
+  const wrapperID = (/\blogin\b|\bregister\b/.test(match.params.id))?'auth':'main';
+  const Wrapper = wrappers[wrapperID];
+  const Page = components[match.params.id];
+    
+  return ( 
+    <Wrapper>
+      <Page />
+    </Wrapper> 
+  );
+}
+
+
+
+/**
+ * Main navigation
+*/
+const TestingLinks = () => {
   return(
     <nav className="test-links">
       <ul>
@@ -55,12 +83,12 @@ const TestingLinks = () => {
           </Link>
         </li> 
         <li>
-          <Link to={`/auth/login`}>
+          <Link to={`/login`}>
             Login
           </Link>
         </li>
         <li>
-          <Link to={`/auth/register`}>
+          <Link to={`/register`}>
             Register
           </Link>
         </li>
@@ -84,6 +112,7 @@ const TestingLinks = () => {
     </nav>
   ); 
 }
+
 
 
 export default App;
