@@ -19,7 +19,8 @@ class CrudForm extends React.Component {
 			formDirty: false,
 			formDisabled: false,
 			formValid: false
-		};
+		}; 
+
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.validate = this.validate.bind(this);
@@ -27,7 +28,7 @@ class CrudForm extends React.Component {
 
 
 	handleChange(event) {
-		console.log(event.target.name, event.target.value);
+		// console.log(event.target.name, event.target.value);
 		//...
 		this.setState({
 			formDirty : true,
@@ -46,7 +47,7 @@ class CrudForm extends React.Component {
 					errorEmail:!re.test(value)
 				});
 				// this.setState({ errorEmail:!re.test(value) });
-				console.log('.....email error[', this.state.errorEmail );
+				// console.log('.....email error[', this.state.errorEmail );
 				break;
 			case 'title':
 				this.setState({ errorTitle:!(value.trim().length>this.state.charTitleMin) });
@@ -66,9 +67,9 @@ class CrudForm extends React.Component {
 			formValid:(!errorEmail && !errorTitle && !errorDescription)
 		});
 
-				console.log('.....formValid[', (!errorEmail && !errorTitle && !errorDescription) );
-				console.log('.>>>>formValid[', !errorEmail, !errorTitle, !errorDescription );
-				console.log('.....this.state.formValid [', this.state.formValid );
+				// console.log('.....formValid[', (!errorEmail && !errorTitle && !errorDescription) );
+				// console.log('.>>>>formValid[', !errorEmail, !errorTitle, !errorDescription );
+				// console.log('.....this.state.formValid [', this.state.formValid );
 
 		
 	}
@@ -77,7 +78,7 @@ class CrudForm extends React.Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		//...
-		//...
+		//...  
 		this.setState({ formDisabled:true });
 		//...
 		const listRef = firebase.database().ref('fanci-list');
@@ -89,15 +90,14 @@ class CrudForm extends React.Component {
 			image: this.state.image 
 		};
 		//... 
-		listRef.push(item, (error)=>{
-
-			console.log('...error=', error);
-				console.log('****...Item pushed', this );
+		listRef.push(item, (error)=>{ 
+			// console.log('...error=', error);
+			// console.log('****...Item pushed', this );
 			if(error){
 				console.error('Error while pusing: ', error);
 			}else{
 				//...
-				console.log('****Submitted', this );
+				// console.log('****Submitted', this );
 
 				this.setState((prevState, props) => {
 					return {
@@ -111,11 +111,21 @@ class CrudForm extends React.Component {
 				}); 
 			}
 		});//[end] listRef.push 
+		 
 	}//[end] handleSubmit
 
 
+	/**
+	 * NOTE
+	 ******
+	 * Form validation has a delay
+	 * -> validation is happening on onChange for every input, but causes a delay
+	 * -> Explore validation on keyPress
+	*/
+
+
 	render() {	
-		const { errorEmail, errorTitle, errorDescription, formDirty, charDescriptionMin } = this.state;
+		const { errorEmail, errorTitle, errorDescription, formDirty, charDescriptionMin, formDisabled } = this.state;
 		return(	
 			<div className='app'>
 		        <header>
@@ -125,13 +135,13 @@ class CrudForm extends React.Component {
 		        </header>
 		        <div className='container'>
 		          <section className='add-item'>
-		              <form onSubmit={this.handleSubmit}>
+		              <form onSubmit={this.handleSubmit} noValidate>
 		                <input type="email" name="email" placeholder="Email" onChange={this.handleChange} value={this.state.email} disabled={this.state.formDisabled} />
 		                {
 		                	formDirty && errorEmail && <p className="error">Invalid email</p>
 		                }
 		                
-		                <input type="text" name="title" placeholder="title" onChange={this.handleChange} value={this.state.title} disabled={this.state.formDisabled} />
+		                <input type="text" name="title" placeholder="title" onChange={this.handleChange} value={this.state.title} disabled={this.state.formDisabled} required />
 		                {
 		                	formDirty && errorTitle && <p className="error">Write at least {this.state.charTitleMin} Characters</p>
 		                }
@@ -143,22 +153,24 @@ class CrudForm extends React.Component {
 		                	<option value="1week">1week</option> 
 		                </select>
 
-		                <textarea name="description" placeholder="description" onChange={this.handleChange} value={this.state.description} disabled={this.state.formDisabled}></textarea>
+		                <textarea name="description" ref="description" placeholder="description" onChange={this.handleChange} value={this.state.description} disabled={this.state.formDisabled} required></textarea>
 		                {
 		                	formDirty && errorDescription && <p className="error">Write at least {charDescriptionMin} Characters</p>
 		                }
 
 		                <input type="text" name="image" placeholder="image" disabled={this.state.formDisabled} />
 		                
-		                {
-		                	!this.state.formDisabled &&
-		                	<button disabled={!this.state.formValid}>
-		                		{this.state.formValid?'Publish':'Fill form'}
-		                	</button>
+		                { 
+		                	/*!this.state.formDisabled &&*/
+		                	// <button disabled={!this.state.formValid}>
+		                	// 	{this.state.formValid?'Publish':'Fill form'}
+		                	// </button> 
+		                	<button>
+		                		Publish
+		                	</button> 
 		                }
-		                {
-		                	this.state.formDisabled &&
-		                	<button disabled={this.state.formDisabled}>... Wait a moment ...</button>
+		                { 
+		                	formDisabled && <button disabled={formDisabled}>... Wait a moment ...</button>
 		                }
 		                
 		              </form>
