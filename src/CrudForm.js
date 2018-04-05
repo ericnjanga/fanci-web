@@ -1,15 +1,18 @@
 import React from 'react'; 
-import firebase from './firebase';
+import firebase, { auth, provider } from './firebase.js';
 
 
 /**
  * Handles the submission of a new database record
  * -----------------------------------------------
+ * Inspirations: 
+ * -> https://css-tricks.com/intro-firebase-react/
+ * -> https://css-tricks.com/firebase-react-part-2-user-authentication/
 */
 class CrudForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
+		this.state = { 
 			email: '',
 			title: '',
 			expiry: '3hr',

@@ -4,10 +4,23 @@
 	width: 100%;
 }
 
+.team-firebase nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
 .team-firebase .crud-from,
 .team-firebase .fanci-list {
 	flex: 1;
 	padding: 20px;
+}
+.team-firebase .crud-from {
+	background-color: lime;
+} 
+.team-firebase .fanci-list {
+	background-color: turquoise;
 }
 .team-firebase .fanci-list-item {
 	margin-bottom: 20px;

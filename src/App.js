@@ -7,7 +7,54 @@ import './team-firebase.css';
 import CrudForm from './CrudForm.js';
 import FanciList from './FanciList.js';
 
+import firebase, { auth, provider } from './firebase.js';
+
+
+
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      user: null
+    }
+
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
+  }
+
+
+  login(){
+    auth.signInWithPopup(provider) 
+    .then((result) => {
+      const user = result.user;
+      this.setState({
+        user
+      });
+    }); 
+  }
+
+
+  logout(){
+    auth.signOut()
+    .then(() => {
+      this.setState({
+        user: null
+      });
+    }); 
+  }
+
+
+
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      } 
+    });
+  }
+
+
+
   render() {
     return (
       <Router>
@@ -18,6 +65,13 @@ class App extends Component {
           </header>*/}
           <main>
             <div className="team-firebase">
+              <nav>
+                {this.state.user ?
+                  <button onClick={this.logout}>Log Out</button>                
+                  :
+                  <button onClick={this.login}>Log In</button>              
+                }
+              </nav>
               <CrudForm />
               <FanciList />
             </div>

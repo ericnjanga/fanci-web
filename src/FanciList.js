@@ -1,15 +1,17 @@
 import React from 'react';
-import firebase from './firebase';
+import firebase, { auth, provider } from './firebase.js';
 
 
 /**
  * Handles the display of the latest database records
  * -----------------------------------------------
+ * Inspirations: 
+ * -> https://css-tricks.com/intro-firebase-react/
 */
 class FanciList extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
+		this.state = { 
 			items : [],
 			nbLimit: 20
 		};
