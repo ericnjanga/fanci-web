@@ -1,0 +1,48 @@
+
+/*
+ * fanci-item
+ * ------------------
+*/ 
+
+.fanci-item__header.border-bottom { 
+  border-bottom: 1px solid #ddd;
+}
+.fanci-item__header-title { 
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+}
+.fanci-item__avatar + .fanci-item__header-meta {
+  margin-left: 10px;
+}
+.fanci-item__header-date {
+  font-size: 0.95rem; 
+}
+
+.fanci-item.mdl-card .mdl-card__title img {
+  max-width: 100%;
+}
+.fanci-item__meta-links {
+  list-style: none; 
+}
+.fanci-item__meta-links li {
+  flex-basis: 100%;
+}
+.fanci-item__meta-links li a { 
+  text-decoration: none;
+  color: #666;
+}
+
+
+.fanci-item__meta-links li a span { 
+  text-decoration: none;
+  color: #999;
+}
+.fanci-item__meta-links .material-icons {
+  margin-right: 3px;
+}
+.fanci-item__header,
+.fanci-item .mdl-card__supporting-text,
+.fanci-item .mdl-card__actions {
+  padding-left: 16px;
+  padding-right: 16px;
+}

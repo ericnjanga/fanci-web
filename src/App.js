@@ -11,7 +11,11 @@ import Aroundus from './components/Aroundus.js';
 import Profile from './components/Profile.js';
 import Privacy from './components/Privacy.js';
 
+import FanciItem from './components/FanciItem.js';
+
+
 import './App.css';
+import './components/FanciItem.css';
 
 class App extends Component {
   render() {
@@ -20,10 +24,12 @@ class App extends Component {
         <div className="App"> 
           <TestingLinks />
           <main> 
-            {/* Will force a redirection to '/home' */}
-            <Route exact={true} path="/" component={PageComponent} />
-            {/* Will render the appropriate component or '/home' */}
-            <Route path="/:id" component={PageComponent} />
+            <FanciItem />
+            {/*
+              <Route exact={true} path="/" component={PageComponent} /> 
+              <Route path="/:id" component={PageComponent} />*/
+            } 
+            
           </main>
         </div> 
       </Router>   
