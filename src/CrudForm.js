@@ -1,6 +1,11 @@
 import React from 'react'; 
 import firebase from './firebase';
 
+
+/**
+ * Handles the submission of a new database record
+ * -----------------------------------------------
+*/
 class CrudForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -87,8 +92,18 @@ class CrudForm extends React.Component {
 			title: this.state.title, 
 			expiry: this.state.expiry, 
 			description: this.state.description, 
-			image: this.state.image 
+			image: this.state.image,
+			date: Date.now()
 		};
+
+		//...
+		listRef.orderByChild('date').on("child_added", function(snapshot) {
+		  console.log(snapshot.key + " was " + snapshot.val().date + " date");
+		});
+
+
+
+
 		//... 
 		listRef.push(item, (error)=>{ 
 			// console.log('...error=', error);
@@ -106,7 +121,8 @@ class CrudForm extends React.Component {
 						expiry: this.state.defaultExpiry, 
 						description: '', 
 						image: '',
-						formDisabled: false
+						formDisabled: false,
+						date : Date.now()
 					}
 				}); 
 			}

@@ -2,20 +2,26 @@ import React from 'react';
 import firebase from './firebase';
 
 
+/**
+ * Handles the display of the latest database records
+ * -----------------------------------------------
+*/
 class FanciList extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			items : []
+			items : [],
+			nbLimit: 20
 		};
 	}
 
 	componentDidMount() {
-		const itemsRef = firebase.database().ref('fanci-list');
+		//Get the last [this.state.nbLimit] items from the database ...
+		const itemsRef = firebase.database().ref('fanci-list').limitToLast(this.state.nbLimit);
+		
 		itemsRef.on('value', (snapshot) => {
 			let items = snapshot.val();
-			let newState = [];
-			
+			let newState = []; 
 			for(let item in items) {
 				console.log('....item=', item);
 				newState.push({
@@ -27,8 +33,11 @@ class FanciList extends React.Component {
 					image: items[item].image 
 				});
 			}
+			//Save them in a descending order in the state 
+			//(Firebase doens't offer a descending sorting order)
+			//(Note ".orderByChild('date');" wasn't sorting like expected)
 			this.setState({
-				items: newState
+				items: newState.reverse()
 			});
 		});
 	}
