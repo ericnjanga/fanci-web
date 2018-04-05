@@ -1,5 +1,5 @@
 import React from 'react'; 
-import firebase, { auth, provider } from './firebase.js';
+import firebase from './firebase.js';
 
 
 /**

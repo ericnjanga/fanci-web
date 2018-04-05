@@ -56,6 +56,7 @@ class App extends Component {
 
 
   render() {
+    const { user } = this.state;
     return (
       <Router>
         <div className="App">
@@ -66,14 +67,27 @@ class App extends Component {
           <main>
             <div className="team-firebase">
               <nav>
-                {this.state.user ?
-                  <button onClick={this.logout}>Log Out</button>                
-                  :
-                  <button onClick={this.login}>Log In</button>              
+                <div>
+                  {user ?
+                    <button onClick={this.logout}>Log Out</button>                
+                    :
+                    <button onClick={this.login}>Log In</button>              
+                  }
+                </div>
+                {user &&
+                  <div>
+                    <img className="user-avatar" src={user.photoURL} alt={user.displayName} />
+                  </div> 
                 }
               </nav>
-              <CrudForm />
-              <FanciList />
+
+              {!user && <h1>Please login</h1> } 
+
+              {user && <div>
+                  <CrudForm />
+                  <FanciList />
+                </div>
+              } 
             </div>
             {/*
             <Sidebar />
