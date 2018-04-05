@@ -1,0 +1,41 @@
+
+.team-firebase {
+	display: flex;
+	width: 100%;
+}
+
+.team-firebase .crud-from,
+.team-firebase .fanci-list {
+	flex: 1;
+	padding: 20px;
+}
+.team-firebase .fanci-list-item {
+	margin-bottom: 20px;
+}
+
+
+.team-firebase input[disabled],
+.team-firebase select[disabled],
+.team-firebase textarea[disabled],
+.team-firebase button[disabled]{
+  background-color: #ccc;
+}
+
+.team-firebase .error {
+  margin-top: 0;
+  background-color: red;
+}
+
+
+
+/** --- delete this after --- **/
+.team-firebase .add-item input,
+.team-firebase .add-item select,
+.team-firebase .add-item button,
+.team-firebase .add-item textarea {
+  display: block;
+  border: 1px solid #999;
+      width: 100%;
+  margin-bottom: 10px;
+}
+/** --- delete this after --- **/

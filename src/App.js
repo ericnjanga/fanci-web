@@ -2,21 +2,25 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import logo from './logo.svg';
-import './App.css';
+import './team-firebase.css';
 
 import CrudForm from './CrudForm.js';
+import FanciList from './FanciList.js';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
+          {/*<header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
-          </header>
+          </header>*/}
           <main>
-            <CrudForm />
+            <div className="team-firebase">
+              <CrudForm />
+              <FanciList />
+            </div>
             {/*
             <Sidebar />
             <div className="center">

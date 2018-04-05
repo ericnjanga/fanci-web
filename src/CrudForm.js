@@ -127,7 +127,7 @@ class CrudForm extends React.Component {
 	render() {	
 		const { errorEmail, errorTitle, errorDescription, formDirty, charDescriptionMin, formDisabled } = this.state;
 		return(	
-			<div className='app'>
+			<div className='crud-from'>
 		        <header>
 		            <div className='wrapper'>
 		              <h1>New Fanci</h1> 
