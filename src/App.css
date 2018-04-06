@@ -7,7 +7,7 @@ html, body {
 
  
 main {
-  padding: 20px;
+  /*padding: 20px;*/
   flex-direction: column;
 }
 
@@ -22,6 +22,7 @@ body.login,
     background: #cfd8dc;
 }
 .fanci-modal,
+.fanci-btn-icon,
 .fanci-item__meta-links li a,
 .fanci-item__meta-links li a span,
 .fanci-item__meta-links,
@@ -75,12 +76,16 @@ body.login,
 .user-profile__header-imgframe,
 .mdl-tabs__panel-frame,
 .mdl-card--register footer,
+.fanci-modal .form-post,
 .app-header__title .material-icons,
 #home-panel {
   position: relative;
 
 }
 
+.fanci-modal--post .mdl-icon-toggle__label.material-icons,
+.fanci-modal--post .fanci-avatar,
+.fanci-modal .fanci-modal__btn-close,
 .app-header__title,
 .app-header .mdl-tabs__tab-bar,
 #home-panel .fanci-pinpoint:not(.fanci-pinpoint__main),
@@ -132,6 +137,7 @@ html, body,
 .fanci-item.mdl-card,
 .fanci-modal__box.mdl-card,
 #home-panel,
+.fanci-modal--post .fanci-btn-icon,
 .material-icons-info,
 .mdl-card--auth .mdl-card__supporting-text,
 .fanci-item .mdl-card__title,
@@ -327,6 +333,7 @@ html, body,
 .fanci-modal--post .mdl-textfield__label,
 #profile-panel .mdl-textfield__label, 
 .fanci-item__header-date,
+.fanci-modal__icon,
 #profile-panel .mdl-checkbox { 
   color: rgba(0,0,0,.54);
 }
@@ -411,41 +418,6 @@ html, body,
 
 
    
-
-/*
- * Modal
- * ------------------
-*/ 
-
-
-.fanci-modal {   
-  background-color: rgba(0,0,0,0.7);
-  z-index: 999;
-}
-.fanci-modal__box {
-  margin-top: 50px;
-  margin-bottom: auto;
-  max-width: 400px;
-}
-.fanci-modal .fanci-item {
-  margin: 30px auto;
-}
-.fanci-modal .fanci-item__header {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-}
-.fanci-modal .fanci-item__header-title {
-  font-size: 24px;
-  line-height: 32px;
-}
-.fanci-modal .mdl-card__supporting-text {
-  padding: 30px; 
-  width: initial;
-}  
-.fanci-modal .mdl-card__supporting-text form > label:nth-of-type(1) { 
-  margin-bottom: 20px;
-}
 
 
 
@@ -568,49 +540,3 @@ html, body,
   margin: 5px;
 }
 
-
- 
-.fanci-modal--post .form-post {
-  position: relative;
-}
-.fanci-modal--post .fanci-avatar {
-  position: absolute;
-  top: 90px;
-  left: 30px;
-}
-.fanci-modal--post .form-post__fieldsets {
-  margin-top: 40px;
-  margin-left: 60px;
-} 
-
-.fanci-modal--post .modal-post__btn-submit,
-.fanci-modal--post .modal-post__btn-close {
-  position: absolute;
-  top: 30px; 
-}
-.fanci-modal--post .modal-post__btn-close {
-  top: 20px;
-  left: 15px;
-}
-.fanci-modal--post .modal-post__btn-close { 
-  background-color: transparent;
-  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0), 0 1px 1px 0 rgba(0,0,0,0);
-}
-
-.fanci-modal--post .modal-post__btn-submit { 
-  right: 30px; 
-  min-width: 120px;
-}
-.fanci-modal--post__addimage {
-  display: flex; 
-  align-items: center;
-  min-width: 160px; 
-  color: rgba(0,0,0,.54);
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  font-weight: normal;
-}
-.fanci-modal--post__addimage span {
-  margin-left: 10px;
-}
-          

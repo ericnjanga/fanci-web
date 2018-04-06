@@ -1,9 +1,10 @@
 
-import './assets/jslibs/material.min.js';
+import './assets/jslibs/material.js';
+/* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
 // import './assets/jslibs/popper.min.js';
 import jquery from 'jquery';
 
-
+   
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
@@ -21,6 +22,9 @@ import Privacy from './components/Privacy.js';
 import FanciItem from './components/FanciItem.js';
 import ProfileForm from './components/ProfileForm.js';
 import ModalLocation from './components/ModalLocation.js';
+import ModalPost from './components/ModalPost.js';
+
+
 
 
 
@@ -37,7 +41,8 @@ class App extends Component {
         <div className="App"> 
           <TestingLinks />
           <main> 
-            <ModalLocation />
+            {/*<ModalPost />*/}<ModalPost />
+            {/*<ModalLocation />*/}
             <ProfileForm />
             <FanciItem />
 

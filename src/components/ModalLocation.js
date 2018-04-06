@@ -7,6 +7,13 @@ class ModalLocation extends React.Component {
 		return(
 			<section id="modal-location" className="fanci-modal"> {/* style={{display:none}}*/}
 	      <div className="fanci-modal__box mdl-card mdl-shadow--2dp">
+        	
+        	{
+        		false && <button className="fanci-modal__btn-close modal-post__btn-dismiss mdl-button mdl-js-button mdl-button--fab">
+						          <i className="material-icons">close</i>
+						        </button>
+        	} 
+
 	        <header className="fanci-item__header border-bottom"> 
 	          <div className="fanci-item__header-meta">
 	            <h4 className="fanci-item__header-title">
