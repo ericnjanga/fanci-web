@@ -5,11 +5,22 @@ html, body {
   background-color: #ddd;
 }
 
- 
+
+
+
+/* - delete after - */
 main {
   /*padding: 20px;*/
   flex-direction: column;
 }
+.mdl-card {
+  margin-bottom: 20px;
+}
+/* - delete after - */
+
+
+
+
 
 
 
@@ -59,10 +70,11 @@ body.login,
  {
   background-color: #ff9800;
 }
+.mdl-checkbox.is-checked .mdl-checkbox__label,
 .mdl-card--auth .title .material-icons,
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active,
 .app-header__title .material-icons, 
-.fanci-modal--post .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.mdl-card .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
 .mdl-card--auth .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
 #profile-panel .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
   color: #ff9800;
@@ -330,14 +342,15 @@ html, body,
  * ------------------
 */ 
 .mdl-layout-title .mdl-layout-info li,
-.fanci-modal--post .mdl-textfield__label,
+.mdl-card .mdl-textfield__label,
+.mdl-card .mdl-checkbox__label,
 #profile-panel .mdl-textfield__label, 
 .fanci-item__header-date,
 .fanci-modal__icon,
 #profile-panel .mdl-checkbox { 
   color: rgba(0,0,0,.54);
 }
-.fanci-modal--post .mdl-textfield__input,
+.mdl-card .mdl-textfield__input,
 #profile-panel .mdl-textfield__input {
   border-bottom: 1px solid rgba(0,0,0,.54);
 }

@@ -41,8 +41,8 @@ class App extends Component {
         <div className="App"> 
           <TestingLinks />
           <main> 
-            {/*<ModalPost />*/}<ModalPost />
-            {/*<ModalLocation />*/}
+            {/*<ModalPost />*/}
+            {/*<ModalLocation />*/} 
             <ProfileForm />
             <FanciItem />
 

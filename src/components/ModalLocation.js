@@ -1,4 +1,5 @@
 import React from 'react';
+import './FanciModal.css';
 import './ModalLocation.css';
 
 class ModalLocation extends React.Component {

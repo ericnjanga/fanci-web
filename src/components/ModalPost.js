@@ -1,4 +1,5 @@
 import React from 'react';
+import './FanciModal.css';
 import './ModalPost.css';
 
 const ModalPost = () => {
@@ -48,7 +49,7 @@ const ModalPost = () => {
               <label className="mdl-textfield__label" htmlFor="fanci-post-location">Location</label> 
             </div> 
 
-            <div className="mdl-textfield mdl-js-textfield">
+            <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <textarea className="mdl-textfield__input" type="text" rows="5" id="fanci-post-description"></textarea>
               <label className="mdl-textfield__label" htmlFor="fanci-post-description">Describe your Fanci</label>
             </div>

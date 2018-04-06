@@ -1,62 +1,4 @@
 
-
-
-/*
- * Modal
- * ------------------
-*/ 
-.fanci-modal {   
-  background-color: rgba(0,0,0,0.7);
-  z-index: 999;
-}
-.fanci-modal__box {
-  margin-top: 30px;
-  margin-bottom: auto;
-  max-width: 400px;
-}
-.fanci-modal .fanci-item {
-  margin: 30px auto;
-}
-.fanci-modal .fanci-item__header {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-}
-.fanci-modal .fanci-item__header-title {
-  font-size: 24px;
-  line-height: 32px;
-}
-.fanci-modal .mdl-card__supporting-text {
-  padding: 30px; 
-  width: initial;
-}  
-.fanci-modal .mdl-card__supporting-text form > label:nth-of-type(1) { 
-  margin-bottom: 20px;
-}
-.fanci-modal .fanci-modal__btn-close { 
-  top: 0; 
-  right: 0;
-  background-color: transparent;
-  border-radius: 0;
-  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0), 0 1px 1px 0 rgba(0,0,0,0);
-}
-.fanci-modal__spacer { 
-  padding-bottom: 20px;
-}
-.fanci-modal .fanci-modal__icon {
-  padding: 0;
-  align-items: center; 
-}
-.fanci-modal .fanci-modal__icon span {
-  margin-left: 10px;
-}
-
-
-
-
-
- 
-
 /*
  * Modal post
  * ------------------
@@ -68,10 +10,7 @@
 .fanci-modal--post .mdl-card__supporting-text {
   padding-top: 10px;
   padding-left: 90px;  
-}   
-.fanci-modal--post .fanci-modal__btnsubmit {
-  margin-top: 10px;
-}
+}  
 .fanci-modal--post .mdl-icon-toggle__label.material-icons {
   top: 15px;
   right: -10px;
