@@ -1,11 +1,12 @@
 import React from 'react';
+import './ModalLocation.css';
 
 class ModalLocation extends React.Component {
 
 	render(){
 		return(
 			<section id="modal-location" className="fanci-modal"> {/* style={{display:none}}*/}
-	      <div className="fanci-item mdl-card mdl-shadow--2dp">
+	      <div className="fanci-modal__box mdl-card mdl-shadow--2dp">
 	        <header className="fanci-item__header border-bottom"> 
 	          <div className="fanci-item__header-meta">
 	            <h4 className="fanci-item__header-title">
@@ -31,7 +32,7 @@ class ModalLocation extends React.Component {
 	              <label className="mdl-textfield__label" htmlFor="sample3">Type your location here ...</label>
 	            </div>
 	             
-	            <button id="form-location__btn-submit" className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"> {/* style={{margin-top: 30px; min-width: 120px;}}*/}
+	            <button id="form-location__btn-submit" className="fanci-modal__btnsubmit mdl-button mdl-js-button mdl-button--raised mdl-button--colored"> {/* style={{margin-top: 30px; min-width: 120px;}}*/}
 	              Search
 	            </button>
 	          </form> 

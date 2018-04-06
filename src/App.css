@@ -21,6 +21,7 @@ body.login,
 .popper, .tooltip { 
     background: #cfd8dc;
 }
+.fanci-modal,
 .fanci-item__meta-links li a,
 .fanci-item__meta-links li a span,
 .fanci-item__meta-links,
@@ -33,6 +34,7 @@ body.login,
   display: flex;
 }
 
+.fanci-modal__btnsubmit,
 .app-header .mdl-tabs__tab-bar, 
 .fanci-item__btn-optin,
 .mdl-textfield,
@@ -128,6 +130,7 @@ html, body,
 }
 html, body,
 .fanci-item.mdl-card,
+.fanci-modal__box.mdl-card,
 #home-panel,
 .material-icons-info,
 .mdl-card--auth .mdl-card__supporting-text,
@@ -184,6 +187,7 @@ html, body,
 .popper, .tooltip { 
   padding: 10px;
 }
+.fanci-modal,
 .fanci-item__meta-links li a,
 .user-profile__header {
   justify-content: center;
@@ -418,12 +422,18 @@ html, body,
   background-color: rgba(0,0,0,0.7);
   z-index: 999;
 }
+.fanci-modal__box {
+  margin-top: 50px;
+  margin-bottom: auto;
+  max-width: 400px;
+}
 .fanci-modal .fanci-item {
   margin: 30px auto;
 }
 .fanci-modal .fanci-item__header {
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 10px;
 }
 .fanci-modal .fanci-item__header-title {
   font-size: 24px;
