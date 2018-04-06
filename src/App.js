@@ -12,6 +12,11 @@ import Profile from './components/Profile.js';
 import Privacy from './components/Privacy.js';
 
 import FanciItem from './components/FanciItem.js';
+import ProfileForm from './components/ProfileForm.js';
+
+
+
+
 
 
 import './App.css';
@@ -24,7 +29,9 @@ class App extends Component {
         <div className="App"> 
           <TestingLinks />
           <main> 
+            <ProfileForm />
             <FanciItem />
+
             {/*
               <Route exact={true} path="/" component={PageComponent} /> 
               <Route path="/:id" component={PageComponent} />*/

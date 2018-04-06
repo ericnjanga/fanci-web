@@ -8,6 +8,7 @@ html, body {
  
 main {
   padding: 20px;
+  flex-direction: column;
 }
 
 
@@ -36,7 +37,7 @@ body.login,
 .fanci-item__btn-optin,
 .mdl-textfield,
 .login .mdl-button,    
-.fanci-item.mdl-card,
+.mdl-card,
 .mdl-card--auth,
 .mdl-card--auth .mdl-card__supporting-text, 
 .app-header,
@@ -103,6 +104,20 @@ html, body,
 }
 
 
+.mdl-card,
+.fanci-item__header,
+.fanci-item .mdl-card__supporting-text,
+.fanci-item .mdl-card__actions {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.mdl-card {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
 #privacy-panel .mdl-card__supporting-text h3, 
 .popper[x-placement^="top"] .popper__arrow, .tooltip[x-placement^="top"] .tooltip-arrow {
   margin-top: 0;
@@ -112,9 +127,13 @@ html, body,
   color: rgba(0,0,0,.87);
 }
 html, body,
+.fanci-item.mdl-card,
+#home-panel,
+.material-icons-info,
 .mdl-card--auth .mdl-card__supporting-text,
-.fanci-item.mdl-card .mdl-card__title,
+.fanci-item .mdl-card__title,
 .fanci-item__meta-links,
+.fanci-modal--post__addimage,
 .mdl-layout__drawer .mdl-navigation {
   padding: 0;
 }
@@ -157,12 +176,11 @@ html, body,
   display: block; 
 }
 
-#profile-panel .fanci-item,
+
 .mdl-tabs__panel-frame {
   padding: 20px;
 }
-.user-profile__header-imgframe .material-icons, 
-.fanci-item__header,
+.user-profile__header-imgframe .material-icons,  
 .popper, .tooltip { 
   padding: 10px;
 }
@@ -288,8 +306,7 @@ html, body,
   justify-content: center;
   align-items: center; 
   height: calc(100vh - 85px); 
-  top: 85px;
-  padding: 00; 
+  top: 85px; 
 }
 
 /* aroundus panel */
@@ -432,8 +449,7 @@ html, body,
   border-bottom: 0px solid #e0e0e0;
 } 
 .material-icons-info {
-  margin: 0;
-  padding: 0;
+  margin: 0; 
   list-style: none;
   font-size: 0.8rem;
   line-height: 1.2rem;
@@ -578,8 +594,7 @@ html, body,
 .fanci-modal--post__addimage {
   display: flex; 
   align-items: center;
-  min-width: 160px;
-  padding: 0;
+  min-width: 160px; 
   color: rgba(0,0,0,.54);
   text-transform: capitalize;
   font-size: 1.1rem;

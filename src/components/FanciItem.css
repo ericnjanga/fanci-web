@@ -17,6 +17,9 @@
 .fanci-item__header-date {
   font-size: 0.95rem; 
 }
+.fanci-item__header {
+  padding-top: 16px;
+}
 
 .fanci-item.mdl-card .mdl-card__title img {
   max-width: 100%;
@@ -39,10 +42,4 @@
 }
 .fanci-item__meta-links .material-icons {
   margin-right: 3px;
-}
-.fanci-item__header,
-.fanci-item .mdl-card__supporting-text,
-.fanci-item .mdl-card__actions {
-  padding-left: 16px;
-  padding-right: 16px;
 }
