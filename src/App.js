@@ -1,3 +1,10 @@
+
+import './assets/jslibs/material.min.js';
+// import './assets/jslibs/popper.min.js';
+import jquery from 'jquery';
+
+
+
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 //Components ...
@@ -13,14 +20,15 @@ import Privacy from './components/Privacy.js';
 
 import FanciItem from './components/FanciItem.js';
 import ProfileForm from './components/ProfileForm.js';
+import ModalLocation from './components/ModalLocation.js';
 
 
 
-
-
-
+//Material Design Lite 
+import './assets/csslibs/google-fonts.css';
+import './assets/csslibs/material.grey-orange.min.css';
+import './assets/csslibs/material-icon.css';
 import './App.css';
-import './components/FanciItem.css';
 
 class App extends Component {
   render() {
@@ -29,8 +37,10 @@ class App extends Component {
         <div className="App"> 
           <TestingLinks />
           <main> 
+            <ModalLocation />
             <ProfileForm />
             <FanciItem />
+
 
             {/*
               <Route exact={true} path="/" component={PageComponent} /> 

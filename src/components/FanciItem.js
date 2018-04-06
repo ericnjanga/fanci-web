@@ -1,4 +1,7 @@
 import React from 'react';
+import './FanciItem.css';
+
+
 
 const FanciItem = (props) => {
 
