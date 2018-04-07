@@ -39,9 +39,9 @@ body.login,
 .fanci-item__meta-links,
 .mdl-tabs,
 .mdl-tabs__tab-bar > nav, 
-.user-profile__header h4,
+.profile-avatar h4,
 .fanci-item__header,
-.user-profile__header, 
+.profile-avatar, 
 #home-panel.is-active {
   display: flex;
 }
@@ -64,7 +64,7 @@ body.login,
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after,
 .login .mdl-button,
 .mdl-textfield__label:after,
-.user-profile__header-imgframe .material-icons, 
+.profile-avatar__imgframe .material-icons, 
 .mdl-button--raised.mdl-button--colored,
 .mdl-button--colored
  {
@@ -85,7 +85,7 @@ body.login,
 }
 .mdl-card--auth .mdl-textfield:nth-of-type(2),
 .mdl-tabs__tab-bar > nav a .material-icons,
-.user-profile__header-imgframe,
+.profile-avatar__imgframe,
 .mdl-tabs__panel-frame,
 .mdl-card--register footer,
 .fanci-modal .form-post,
@@ -101,7 +101,7 @@ body.login,
 .app-header__title,
 .app-header .mdl-tabs__tab-bar,
 #home-panel .fanci-pinpoint:not(.fanci-pinpoint__main),
-.user-profile__header-imgframe .material-icons,
+.profile-avatar__imgframe .material-icons,
 .popper, .tooltip,
 .popper .popper__arrow, .tooltip .tooltip-arrow {
   position: absolute; 
@@ -111,8 +111,8 @@ html, body,
 .mdl-layout-title h3, 
 .fanci-item__header-title,
 .fanci-item__meta-links,
-.user-profile__header h3,
-.user-profile__header h4,
+.profile-avatar h3,
+.profile-avatar h4,
 .app-header__title,
 .app-header__title {
   margin: 0;
@@ -163,7 +163,7 @@ html, body,
 .app-header a, 
 .mdl-button--raised.mdl-button--colored,
 .mdl-button--colored,
-.user-profile__header-imgframe .material-icons { 
+.profile-avatar__imgframe .material-icons { 
   color: #fff;
 }
 
@@ -174,7 +174,7 @@ html, body,
   position: fixed; 
 }
 
-.user-profile__header-imgframe .material-icons,
+.profile-avatar__imgframe .material-icons,
 .btn-open-post { 
   bottom: 0;
 }
@@ -201,13 +201,13 @@ html, body,
 .mdl-tabs__panel-frame {
   padding: 20px;
 }
-.user-profile__header-imgframe .material-icons,  
+.profile-avatar__imgframe .material-icons,  
 .popper, .tooltip { 
   padding: 10px;
 }
 .fanci-modal,
 .fanci-item__meta-links li a,
-.user-profile__header {
+.profile-avatar {
   justify-content: center;
 }
 
@@ -359,27 +359,17 @@ html, body,
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.user-profile__header { 
-  background-color: #ddd;
-  align-items: center;
-  flex-direction: column;
-  padding: 30px;
-}
 
 
-.user-profile__header-imgframe .material-icons {  
-  right: 0; 
-  border-radius: 30px; 
-}
 .mdl-layout-title h3, 
-.user-profile__header h3 {  
+.profile-avatar h3 {  
   margin-top: 10px;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #90a4ae;
 }
 .mdl-layout-title h4, 
-.user-profile__header h4 {  
+.profile-avatar h4 {  
   font-size: 1.0rem;
   align-items: center;
   line-height: 0;

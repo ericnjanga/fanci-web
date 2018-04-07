@@ -23,6 +23,9 @@ import FanciItem from './components/FanciItem.js';
 import ProfileForm from './components/ProfileForm.js';
 import ModalLocation from './components/ModalLocation.js';
 import ModalPost from './components/ModalPost.js';
+import ProfileAvatar from './components/ProfileAvatar.js';
+
+
 
 
 
@@ -43,6 +46,7 @@ class App extends Component {
           <main> 
             {/*<ModalPost />*/}
             {/*<ModalLocation />*/} 
+            <ProfileAvatar />
             <ProfileForm />
             <FanciItem />
 

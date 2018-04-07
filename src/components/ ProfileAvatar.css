@@ -1,0 +1,11 @@
+
+.profile-avatar { 
+  background-color: #ddd;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+.profile-avatar__imgframe .material-icons {  
+  right: 0; 
+  border-radius: 30px; 
+}
