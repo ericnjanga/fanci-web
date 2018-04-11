@@ -1,6 +1,7 @@
 /**
  * Global layout
  * -------------
+ * -------------
 */
 
 
@@ -8,4 +9,13 @@ body {
   margin: 0;
   padding: 0; 
   background-color: #ddd;
+}
+
+
+/**
+ * Drawer
+ * -------------
+*/
+.mdl-layout__drawer>.mdl-layout-title {
+	margin-top: 15px;
 }
