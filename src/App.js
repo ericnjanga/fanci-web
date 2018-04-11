@@ -7,7 +7,7 @@ import jquery from 'jquery';
    
 
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Link, Route, Redirect } from 'react-router-dom';
 
 
 
@@ -24,7 +24,10 @@ class App extends Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
           <main>
+            <MainTabs />
             <Sidebar />
+
+
             <div className="center">
               <Route exact={true} path="/" render={()=>(
                 <h1>Welcome</h1>
@@ -42,6 +45,36 @@ class App extends Component {
     );
   }
 }
+
+
+const MainTabs = () => {
+  return(
+    <div className="mdl-tabs__tab-bar">
+      <nav>
+        <NavLink exact={true} to={`/`} className="mdl-tabs__tab" activeClassName="is-active">
+          <i className="material-icons">home</i>
+        </NavLink>
+        <NavLink to={`/around-us`} className="mdl-tabs__tab" activeClassName="is-active"> 
+          <i className="material-icons mdl-badge mdl-badge--overlap" data-badge="25">notifications</i>
+        </NavLink>
+        <NavLink to={`/profile`} className="mdl-tabs__tab" activeClassName="is-active">
+          <i className="material-icons">person</i>
+        </NavLink>
+        {/*
+        <a href="#home-panel" className="mdl-tabs__tab is-active"> 
+          <i className="material-icons">home</i>
+        </a> 
+        <a href="#aroundus-panel" className="mdl-tabs__tab"> 
+          <i className="material-icons mdl-badge mdl-badge--overlap" data-badge="25">notifications</i>
+        </a>
+        <a href="#profile-panel" className="mdl-tabs__tab"> 
+          <i className="material-icons">person</i>
+        </a> 
+        */}
+      </nav>
+    </div>
+  );
+}//[end] MainTabs
 
 
 const Sidebar = () => {
