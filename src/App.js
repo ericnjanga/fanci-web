@@ -1,13 +1,22 @@
-
+// Libraries ...
 import './assets/jslibs/material.js';
 /* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
 // import './assets/jslibs/popper.min.js';
-import jquery from 'jquery';
+// import jquery from 'jquery';
 
-   
-
+//Material Design Lite 
+import './assets/csslibs/google-fonts.css';
+import './assets/csslibs/material.grey-orange.min.css';
+import './assets/csslibs/material-icon.css';
+//React Packages ...
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
+//React Components ...
+import DrawerNav from './components__layout/DrawerNav.js';
+import MainHeader from './components__layout/MainHeader.js';
+import Sidebar from './components__layout/Sidebar.js';
+
 //Components ...
 import TemplateAuth from './components/TemplateAuth.js';
 import TemplateMain from './components/TemplateMain.js';
@@ -25,43 +34,52 @@ import ModalLocation from './components/ModalLocation.js';
 import ModalPost from './components/ModalPost.js';
 import ProfileAvatar from './components/ProfileAvatar.js';
 
-
-
-
-
-
-
-//Material Design Lite 
-import './assets/csslibs/google-fonts.css';
-import './assets/csslibs/material.grey-orange.min.css';
-import './assets/csslibs/material-icon.css';
+//Main Stylesheet ...
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App"> 
-          <TestingLinks />
-          <main> 
-            {/*<ModalPost />*/}
-            {/*<ModalLocation />*/} 
-            <ProfileAvatar />
-            <ProfileForm />
-            <FanciItem />
+      <Router> 
+        <div className="mdl-layout mdl-js-layout mdl-layout--no-drawer-button">
+          <DrawerNav />
+          <main className="mdl-layout__content"> 
+            <section className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+              <MainHeader /> 
+              <main className="main-content">
+                <Sidebar />
+                <div className="center">
+                  <Route exact={true} path="/" render={()=>(
+                    <h1>Welcome</h1>
+                  )} />
+
+                  {/*<ModalPost />*/}
+                  {/*<ModalLocation />*/} 
+                  <ProfileAvatar />
+                  <ProfileForm />
+                  <FanciItem />
 
 
-            {/*
-              <Route exact={true} path="/" component={PageComponent} /> 
-              <Route path="/:id" component={PageComponent} />*/
-            } 
-            
-          </main>
-        </div> 
-      </Router>   
+                  {/*
+                    <Route exact={true} path="/" component={PageComponent} /> 
+                    <Route path="/:id" component={PageComponent} />*/
+                  } 
+                  
+                  <Route path="/login" component={Login} />
+                  <Route path="/register" component={Register} />
+                  <Route path="/around-us" component={Aroundus} /> 
+                  <Route path="/profile" component={Profile} /> 
+                  <Route path="/privacy" component={Privacy} /> 
+                </div>
+              </main> 
+            </section>{/* mdl-tabs */}
+          </main>{/* mdl-layout__content */}
+        </div>{/* mdl-layout */}
+      </Router>
     );
   }
-}
+}//[end] App
+ 
 
 
 
@@ -100,51 +118,7 @@ const PageComponent = ({ match }) => {
   );
 }
 
-
-
-/**
- * Main navigation
-*/
-const TestingLinks = () => {
-  return(
-    <nav className="test-links">
-      <ul>
-        <li>
-          <Link to={`/`}>
-            Home
-          </Link>
-        </li> 
-        <li>
-          <Link to={`/login`}>
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link to={`/register`}>
-            Register
-          </Link>
-        </li>
-        <li>
-          <Link to={`/around-us`}>
-            Around Us
-          </Link>
-        </li>
-        <li>
-          <Link to={`/profile`}>
-            Profile
-          </Link>
-        </li>
-        <li>
-          <Link to={`/privacy`}>
-            Privacy
-          </Link>
-        </li>
-        
-      </ul>
-    </nav>
-  ); 
-}
-
+ 
 
 
 export default App;
