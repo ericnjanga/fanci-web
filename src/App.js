@@ -1,6 +1,21 @@
+
+// import './assets/jslibs/material.js';
+/* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
+// import './assets/jslibs/popper.min.js';
+// import jquery from 'jquery';
+
+   
+
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+
+
+
+
+// //Material Design Lite 
+// import './assets/csslibs/google-fonts.css';
+// import './assets/csslibs/material.grey-orange.min.css';
+// import './assets/csslibs/material-icon.css';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +24,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+             
             <h1 className="App-title">Welcome to React</h1>
           </header>
           <main>
