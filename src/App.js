@@ -1,15 +1,28 @@
+// Libraries ...
+import './assets/jslibs/material.js';
+/* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
+// import './assets/jslibs/popper.min.js';
+// import jquery from 'jquery';
+
+//React Packages ...
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 
-import logo from './logo.svg';
-import './team-firebase.css';
+//Firebase Packages ...
+import firebase, { auth, provider } from './firebase.js';
 
+//(temps) firebase components ...
 import CrudForm from './CrudForm.js';
 import FanciList from './FanciList.js';
 
-import firebase, { auth, provider } from './firebase.js';
+//React Components ...
+import DrawerNav from './components__layout/DrawerNav.js';
+import MainHeader from './components__layout/MainHeader.js';
+import Sidebar from './components__layout/Sidebar.js';
 
-
+//Main Stylesheet ...
+import './App.css';
+import './team-firebase.css';
 
 class App extends Component {
   constructor(props){
@@ -88,97 +101,59 @@ class App extends Component {
     const { user, items } = this.state;
     return (
       <Router>
-        <div className="App">
-          {/*<header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>*/}
-          <main>
-            <div className="team-firebase">
-              <nav>
-                <div>
-                  {user ?
-                    <button onClick={this.logout}>Log Out</button>                
-                    :
-                    <button onClick={this.login}>Log In</button>              
-                  }
-                </div>
-                {user &&
-                  <div>
-                    <img className="user-avatar" src={user.photoURL} alt={user.displayName} />
-                  </div> 
-                }
-              </nav>
+        <div className="mdl-layout mdl-js-layout mdl-layout--no-drawer-button">
+          <DrawerNav />
+          <main className="mdl-layout__content"> 
+            <section className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+              <MainHeader /> 
+              <main className="main-content">
+                <Sidebar />
+                <div className="center">
+                  <Route exact={true} path="/" render={()=>(
+                    <h1>Welcome</h1>
+                  )} />
+                  
+                  <Route path="/login" component={Login} />
+                  <Route path="/register" component={Register} />
+                  <Route path="/around-us" component={Aroundus} /> 
+                  <Route path="/profile" component={Profile} /> 
+                  <Route path="/privacy" component={Privacy} /> 
 
-              {!user && <h1>Please login</h1> } 
+                  <div className="team-firebase">
+                    <nav>
+                      <div>
+                        {user ?
+                          <button onClick={this.logout}>Log Out</button>                
+                          :
+                          <button onClick={this.login}>Log In</button>              
+                        }
+                      </div>
+                      {user &&
+                        <div>
+                          <img className="user-avatar" src={user.photoURL} alt={user.displayName} />
+                        </div> 
+                      }
+                    </nav>
 
-              {user && <div>
-                  <CrudForm />
-                  <FanciList items={items} />
+                    {!user && <h1>Please login</h1> } 
+
+                    {user && <div>
+                        <CrudForm />
+                        <FanciList items={items} />
+                      </div>
+                    } 
+                  </div>
                 </div>
-              } 
-            </div>
-            {/*
-            <Sidebar />
-            <div className="center">
-              <Route exact={true} path="/" render={()=>(
-                <h1>Welcome</h1>
-              )} />
-              
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/around-us" component={Aroundus} /> 
-              <Route path="/profile" component={Profile} /> 
-              <Route path="/privacy" component={Privacy} /> 
-            </div>
-          */}
-          </main>
-        </div>
+              </main> 
+            </section>{/* mdl-tabs */}
+          </main>{/* mdl-layout__content */}
+        </div>{/* mdl-layout */}
       </Router>
     );
   }
-}
+}//[end] App
+ 
 
-
-const Sidebar = () => {
-
-  return(
-    <aside>
-      <ul>
-        <li>
-          <Link to={`/`}>
-            <a href="#">Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link to={`/login`}>
-            <a href="#">Login</a>
-          </Link>
-        </li>
-        <li>
-          <Link to={`/register`}>
-            <a href="#">Register</a>
-          </Link>
-        </li>
-        <li>
-          <Link to={`/around-us`}>
-            <a href="#">Around Us</a>
-          </Link>
-        </li>
-        <li>
-          <Link to={`/profile`}>
-            <a href="#">Profile</a>
-          </Link>
-        </li>
-        <li>
-          <Link to={`/privacy`}>
-            <a href="#">Privacy</a>
-          </Link>
-        </li>
-      </ul>
-    </aside>
-  ); 
-}
 
 
 const Login = () => {
