@@ -74,15 +74,49 @@
 
 
 
+      <main class="mdl-layout__content"> 
+        <section class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+
+          <header class="app-header">
+            <h1 class="app-header__title">
+              Fanci <i class="material-icons">person_pin</i>
+            </h1>
+  
+            <div class="app-header__search mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+              <label class="mdl-button mdl-js-button mdl-button--icon"
+                      for="fixed-header-drawer-exp">
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" name="sample"
+                        id="fixed-header-drawer-exp">
+              </div>
+            </div>
+  
+            <div class="mdl-tabs__tab-bar">
+              <nav>
+                <a href="#home-panel" class="mdl-tabs__tab is-active"> 
+                  <i class="material-icons">home</i>
+                </a> 
+                <a href="#aroundus-panel" class="mdl-tabs__tab"> 
+                  <i class="material-icons mdl-badge mdl-badge--overlap" data-badge="25">notifications</i>
+                </a>
+                <a href="#profile-panel" class="mdl-tabs__tab"> 
+                  <i class="material-icons">person</i>
+                </a> 
+              </nav>
+            </div><!-- mdl-tabs__tab-bar --> 
+  
+            <div class="mdl-layout-spacer"></div> 
+          </header><!-- app-header -->
 
 
 
+          <div id="root"></div>
+        </section><!-- mdl-tabs -->
+      </main><!-- mdl-layout__content -->
 
-
-
-
-
-      <div id="root"></div>
     </div><!-- mdl-layout -->
   </body>
 </html>
