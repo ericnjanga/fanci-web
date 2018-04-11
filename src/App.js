@@ -8,24 +8,21 @@ import jquery from 'jquery';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-//Components ...
-import TemplateAuth from './components/TemplateAuth.js';
-import TemplateMain from './components/TemplateMain.js';
-
-import Map from './components/Map.js';
-import Login from './components/Login.js';
-import Register from './components/Register.js';
-import Aroundus from './components/Aroundus.js';
-import Profile from './components/Profile.js';
-import Privacy from './components/Privacy.js';
-
-
-
-
 //React Components ...
+//-> Layout ...
 import DrawerNav from './components__layout/DrawerNav.js';
 import MainHeader from './components__layout/MainHeader.js';
 import Sidebar from './components__layout/Sidebar.js';
+//-> Templates ...
+import TemplateAuth from './components__tpl/TemplateAuth.js';
+import TemplateMain from './components__tpl/TemplateMain.js';
+//-> Views ...
+import Map from './components__views/Map.js';
+import Login from './components__views/Login.js';
+import Register from './components__views/Register.js';
+import Aroundus from './components__views/Aroundus.js';
+import Profile from './components__views/Profile.js';
+import Privacy from './components__views/Privacy.js';
 
 //Main Stylesheet ...
 import './App.css';
