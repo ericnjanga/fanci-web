@@ -1,8 +1,8 @@
 
-// import './assets/jslibs/material.js';
+import './assets/jslibs/material.js';
 /* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
 // import './assets/jslibs/popper.min.js';
-// import jquery from 'jquery';
+import jquery from 'jquery';
 
    
 
@@ -12,10 +12,10 @@ import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom
 
 
 
-// //Material Design Lite 
-// import './assets/csslibs/google-fonts.css';
-// import './assets/csslibs/material.grey-orange.min.css';
-// import './assets/csslibs/material-icon.css';
+//Material Design Lite 
+import './assets/csslibs/google-fonts.css';
+import './assets/csslibs/material.grey-orange.min.css';
+import './assets/csslibs/material-icon.css';
 import './App.css';
 
 class App extends Component {
