@@ -1,3 +1,11 @@
+
+import './assets/jslibs/material.js';
+/* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
+// import './assets/jslibs/popper.min.js';
+import jquery from 'jquery';
+
+   
+
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 //Components ...
@@ -11,6 +19,14 @@ import Aroundus from './components/Aroundus.js';
 import Profile from './components/Profile.js';
 import Privacy from './components/Privacy.js';
 
+
+
+
+
+//Material Design Lite 
+import './assets/csslibs/google-fonts.css';
+import './assets/csslibs/material.grey-orange.min.css';
+import './assets/csslibs/material-icon.css';
 import './App.css';
 
 class App extends Component {
