@@ -1,10 +1,16 @@
+/**
+ * Global layout
+ * -------------
+*/
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
-
+/* 
 main {
 	display: flex;
 	height: 400px;
@@ -15,4 +21,4 @@ aside {
 }
 .center {
 	border: 1px solid gray;
-}
+} */

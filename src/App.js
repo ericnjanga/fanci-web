@@ -11,11 +11,7 @@ import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom
 
 
 
-
-//Material Design Lite 
-import './assets/csslibs/google-fonts.css';
-import './assets/csslibs/material.grey-orange.min.css';
-import './assets/csslibs/material-icon.css';
+//Main Stylesheet
 import './App.css';
 
 class App extends Component {
@@ -54,34 +50,22 @@ const Sidebar = () => {
     <aside>
       <ul>
         <li>
-          <Link to={`/`}>
-            <a href="#">Home</a>
-          </Link>
+          <Link to={`/`}>Home</Link>
         </li>
         <li>
-          <Link to={`/login`}>
-            <a href="#">Login</a>
-          </Link>
+          <Link to={`/login`}>Login</Link>
         </li>
         <li>
-          <Link to={`/register`}>
-            <a href="#">Register</a>
-          </Link>
+          <Link to={`/register`}>Register</Link>
         </li>
         <li>
-          <Link to={`/around-us`}>
-            <a href="#">Around Us</a>
-          </Link>
+          <Link to={`/around-us`}>Around Us</Link>
         </li>
         <li>
-          <Link to={`/profile`}>
-            <a href="#">Profile</a>
-          </Link>
+          <Link to={`/profile`}>Profile</Link>
         </li>
         <li>
-          <Link to={`/privacy`}>
-            <a href="#">Privacy</a>
-          </Link>
+          <Link to={`/privacy`}>Privacy</Link>
         </li>
       </ul>
     </aside>
