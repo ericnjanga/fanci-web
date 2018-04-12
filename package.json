@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^4.12.1",
+    "getmdl-select": "^2.0.1",
     "jquery": "^3.3.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
