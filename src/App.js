@@ -2,7 +2,7 @@
 import './assets/jslibs/material.js';
 /* (getmdl-select.js incorporated into material.js) import './assets/jslibs/getmdl-select.js'; */
 // import './assets/jslibs/popper.min.js';
-// import jquery from 'jquery';
+import jquery from 'jquery';
 
 //React Packages ...
 import React, { Component } from 'react';
